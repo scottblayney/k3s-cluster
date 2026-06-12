@@ -1,0 +1,191 @@
+debug1: OpenSSH_10.2p1, OpenSSL 3.5.5 27 Jan 2026
+debug1: Reading configuration data /var/home/scott/.ssh/config
+debug1: /var/home/scott/.ssh/config line 5: Applying options for github.com
+debug1: /var/home/scott/.ssh/config line 20: Applying options for *
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/50-redhat.conf
+debug1: Reading configuration data /etc/crypto-policies/back-ends/openssh.config
+debug1: configuration requests final Match pass
+debug1: re-parsing configuration
+debug1: Reading configuration data /var/home/scott/.ssh/config
+debug1: /var/home/scott/.ssh/config line 5: Applying options for github.com
+debug1: /var/home/scott/.ssh/config line 20: Applying options for *
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/50-redhat.conf
+debug1: Reading configuration data /etc/crypto-policies/back-ends/openssh.config
+debug1: Connecting to github.com [140.82.112.4] port 22.
+debug1: Connection established.
+debug1: loaded pubkey from /var/home/scott/.ssh/id_ed25519.pub: ED25519 SHA256:HNdszwZOMLPmY7c1TzYGfPlY2fbrhFv2dsTQjmarXxA
+debug1: identity file /var/home/scott/.ssh/id_ed25519.pub type 2
+debug1: no identity pubkey loaded from /var/home/scott/.ssh/id_ed25519.pub
+debug1: loaded pubkey from /var/home/scott/.ssh/id_ed25519_sk_724.pub: ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q
+debug1: identity file /var/home/scott/.ssh/id_ed25519_sk_724.pub type 8
+debug1: no identity pubkey loaded from /var/home/scott/.ssh/id_ed25519_sk_724.pub
+debug1: loaded pubkey from /var/home/scott/.ssh/id_ed25519_sk_924.pub: ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI
+debug1: identity file /var/home/scott/.ssh/id_ed25519_sk_924.pub type 8
+debug1: no identity pubkey loaded from /var/home/scott/.ssh/id_ed25519_sk_924.pub
+debug1: Local version string SSH-2.0-OpenSSH_10.2
+debug1: Remote protocol version 2.0, remote software version 6279353
+debug1: compat_banner: no match: 6279353
+debug1: Authenticating to github.com:22 as 'git'
+debug1: load_hostkeys: fopen /var/home/scott/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: aes256-gcm@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: aes256-gcm@openssh.com MAC: <implicit> compression: none
+debug1: kex: curve25519-sha256 need=32 dh_need=32
+debug1: kex: curve25519-sha256 need=32 dh_need=32
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+debug1: load_hostkeys: fopen /var/home/scott/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: Host 'github.com' is known and matches the ED25519 host key.
+debug1: Found key in /var/home/scott/.ssh/known_hosts:1
+debug1: ssh_packet_send2_wrapped: resetting send seqnr 3
+debug1: rekey out after 4294967296 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: ssh_packet_read_poll2: resetting read seqnr 3
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 4294967296 blocks
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_ext_info_client_parse: server-sig-algs=<ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,ssh-ed25519,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256,rsa-sha2-512,rsa-sha2-256,ssh-rsa>
+debug1: kex_ext_info_check_ver: publickey-hostbound@openssh.com=<0>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: get_agent_identities: bound agent to hostkey
+debug1: get_agent_identities: agent returned 3 keys
+debug1: Will attempt key: /var/home/scott/.ssh/id_ed25519_sk_724.pub ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q explicit authenticator agent
+debug1: Will attempt key: /var/home/scott/.ssh/id_ed25519_sk_924.pub ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI explicit authenticator agent
+debug1: Will attempt key: /var/home/scott/.ssh/id_ed25519.pub ED25519 SHA256:HNdszwZOMLPmY7c1TzYGfPlY2fbrhFv2dsTQjmarXxA explicit agent
+debug1: Offering public key: /var/home/scott/.ssh/id_ed25519_sk_724.pub ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q explicit authenticator agent
+debug1: Server accepts key: /var/home/scott/.ssh/id_ed25519_sk_724.pub ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q explicit authenticator agent
+sign_and_send_pubkey: signing failed for ED25519-SK "/var/home/scott/.ssh/id_ed25519_sk_724.pub" from agent: agent refused operation
+debug1: Offering public key: /var/home/scott/.ssh/id_ed25519_sk_924.pub ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI explicit authenticator agent
+debug1: Server accepts key: /var/home/scott/.ssh/id_ed25519_sk_924.pub ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI explicit authenticator agent
+sign_and_send_pubkey: signing failed for ED25519-SK "/var/home/scott/.ssh/id_ed25519_sk_924.pub" from agent: agent refused operation
+debug1: Offering public key: /var/home/scott/.ssh/id_ed25519.pub ED25519 SHA256:HNdszwZOMLPmY7c1TzYGfPlY2fbrhFv2dsTQjmarXxA explicit agent
+debug1: Server accepts key: /var/home/scott/.ssh/id_ed25519.pub ED25519 SHA256:HNdszwZOMLPmY7c1TzYGfPlY2fbrhFv2dsTQjmarXxA explicit agent
+Authenticated to github.com ([140.82.112.4]:22) using "publickey".
+debug1: pkcs11_del_provider: called, provider_id = (null)
+debug1: channel 0: new session [client-session] (inactive timeout: 0)
+debug1: Entering interactive session.
+debug1: pledge: filesystem
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: client_input_hostkeys: searching /var/home/scott/.ssh/known_hosts for github.com / (none)
+debug1: client_input_hostkeys: searching /var/home/scott/.ssh/known_hosts2 for github.com / (none)
+debug1: client_input_hostkeys: hostkeys file /var/home/scott/.ssh/known_hosts2 does not exist
+debug1: client_input_hostkeys: no new or deprecated keys from server
+debug1: Sending environment.
+debug1: channel 0: setting env COLORTERM = "truecolor"
+debug1: pledge: fork
+debug1: client_input_channel_req: channel 0 rtype exit-status reply 0
+debug1: channel 0: free: client-session, nchannels 1
+Transferred: sent 2556, received 3016 bytes, in 0.5 seconds
+Bytes per second: sent 4995.5, received 5894.5
+debug1: Exit status 1
+debug1: OpenSSH_10.2p1, OpenSSL 3.5.5 27 Jan 2026
+debug1: Reading configuration data /var/home/scott/.ssh/config
+debug1: /var/home/scott/.ssh/config line 5: Applying options for github.com
+debug1: /var/home/scott/.ssh/config line 20: Applying options for *
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/50-redhat.conf
+debug1: Reading configuration data /etc/crypto-policies/back-ends/openssh.config
+debug1: configuration requests final Match pass
+debug1: re-parsing configuration
+debug1: Reading configuration data /var/home/scott/.ssh/config
+debug1: /var/home/scott/.ssh/config line 5: Applying options for github.com
+debug1: /var/home/scott/.ssh/config line 20: Applying options for *
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Reading configuration data /etc/ssh/ssh_config.d/20-systemd-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/30-libvirt-ssh-proxy.conf
+debug1: Reading configuration data /etc/ssh/ssh_config.d/50-redhat.conf
+debug1: Reading configuration data /etc/crypto-policies/back-ends/openssh.config
+debug1: Connecting to github.com [140.82.113.4] port 22.
+debug1: Connection established.
+debug1: loaded pubkey from /var/home/scott/.ssh/id_ed25519.pub: ED25519 SHA256:HNdszwZOMLPmY7c1TzYGfPlY2fbrhFv2dsTQjmarXxA
+debug1: identity file /var/home/scott/.ssh/id_ed25519.pub type 2
+debug1: no identity pubkey loaded from /var/home/scott/.ssh/id_ed25519.pub
+debug1: loaded pubkey from /var/home/scott/.ssh/id_ed25519_sk_724.pub: ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q
+debug1: identity file /var/home/scott/.ssh/id_ed25519_sk_724.pub type 8
+debug1: no identity pubkey loaded from /var/home/scott/.ssh/id_ed25519_sk_724.pub
+debug1: loaded pubkey from /var/home/scott/.ssh/id_ed25519_sk_924.pub: ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI
+debug1: identity file /var/home/scott/.ssh/id_ed25519_sk_924.pub type 8
+debug1: no identity pubkey loaded from /var/home/scott/.ssh/id_ed25519_sk_924.pub
+debug1: Local version string SSH-2.0-OpenSSH_10.2
+debug1: Remote protocol version 2.0, remote software version 6279353
+debug1: compat_banner: no match: 6279353
+debug1: Authenticating to github.com:22 as 'git'
+debug1: load_hostkeys: fopen /var/home/scott/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: aes256-gcm@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: aes256-gcm@openssh.com MAC: <implicit> compression: none
+debug1: kex: curve25519-sha256 need=32 dh_need=32
+debug1: kex: curve25519-sha256 need=32 dh_need=32
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+debug1: load_hostkeys: fopen /var/home/scott/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen /etc/ssh/ssh_known_hosts2: No such file or directory
+debug1: Host 'github.com' is known and matches the ED25519 host key.
+debug1: Found key in /var/home/scott/.ssh/known_hosts:1
+debug1: ssh_packet_send2_wrapped: resetting send seqnr 3
+debug1: rekey out after 4294967296 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: ssh_packet_read_poll2: resetting read seqnr 3
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 4294967296 blocks
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_ext_info_client_parse: server-sig-algs=<ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,ssh-ed25519,ecdsa-sha2-nistp521,ecdsa-sha2-nistp384,ecdsa-sha2-nistp256,rsa-sha2-512,rsa-sha2-256,ssh-rsa>
+debug1: kex_ext_info_check_ver: publickey-hostbound@openssh.com=<0>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: get_agent_identities: bound agent to hostkey
+debug1: get_agent_identities: agent returned 3 keys
+debug1: Will attempt key: /var/home/scott/.ssh/id_ed25519_sk_724.pub ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q explicit authenticator agent
+debug1: Will attempt key: /var/home/scott/.ssh/id_ed25519_sk_924.pub ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI explicit authenticator agent
+debug1: Will attempt key: /var/home/scott/.ssh/id_ed25519.pub ED25519 SHA256:HNdszwZOMLPmY7c1TzYGfPlY2fbrhFv2dsTQjmarXxA explicit agent
+debug1: Offering public key: /var/home/scott/.ssh/id_ed25519_sk_724.pub ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q explicit authenticator agent
+debug1: Server accepts key: /var/home/scott/.ssh/id_ed25519_sk_724.pub ED25519-SK SHA256:+wQX4RMJ1MPl3FKw4B4M49hsPdnXI7zujkqQGfA2r0Q explicit authenticator agent
+sign_and_send_pubkey: signing failed for ED25519-SK "/var/home/scott/.ssh/id_ed25519_sk_724.pub" from agent: agent refused operation
+debug1: Offering public key: /var/home/scott/.ssh/id_ed25519_sk_924.pub ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI explicit authenticator agent
+debug1: Server accepts key: /var/home/scott/.ssh/id_ed25519_sk_924.pub ED25519-SK SHA256:WaaD11yuu1MBMJrqUitiy/H5CJ42XaND0u8F1e8jgEI explicit authenticator agent
+Authenticated to github.com ([140.82.113.4]:22) using "publickey".
+debug1: pkcs11_del_provider: called, provider_id = (null)
+debug1: channel 0: new session [client-session] (inactive timeout: 0)
+debug1: Entering interactive session.
+debug1: pledge: filesystem
+debug1: client_input_global_request: rtype hostkeys-00@openssh.com want_reply 0
+debug1: client_input_hostkeys: searching /var/home/scott/.ssh/known_hosts for github.com / (none)
+debug1: client_input_hostkeys: searching /var/home/scott/.ssh/known_hosts2 for github.com / (none)
+debug1: client_input_hostkeys: hostkeys file /var/home/scott/.ssh/known_hosts2 does not exist
+debug1: client_input_hostkeys: no new or deprecated keys from server
+debug1: Sending environment.
+debug1: channel 0: setting env COLORTERM = "truecolor"
+debug1: pledge: fork
+debug1: client_input_channel_req: channel 0 rtype exit-status reply 0
+debug1: channel 0: free: client-session, nchannels 1
+Transferred: sent 2488, received 2932 bytes, in 0.4 seconds
+Bytes per second: sent 6051.1, received 7130.9
+debug1: Exit status 1
