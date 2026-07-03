@@ -1,2 +1,4 @@
-
-cat: ../../apps/: Is a directory
+creation_rules:
+  - path_regex: .*.yaml
+    encrypted_regex: ^(data|stringData)$
+    age: age1qv2n8jc4zrln84g2k34rum07u0z3crem2p652g4ghlxzhz3jxgqqdkxp4v
