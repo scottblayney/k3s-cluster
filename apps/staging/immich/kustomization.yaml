@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../../base/immich/
+  - database-backup.yaml
+  - database-backup-secret.yaml
+  - library-backup.yaml
+  - library-backup-secret.yaml
+  - cloudflare.yaml
+  - cloudflare-secret.yaml

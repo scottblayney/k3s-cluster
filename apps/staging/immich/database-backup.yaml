@@ -1,0 +1,38 @@
+apiVersion: barmancloud.cnpg.io/v1
+kind: ObjectStore
+metadata:
+  name: immich-backup-store
+  namespace: immich
+spec:
+  retentionPolicy: "30d"
+  configuration:
+    destinationPath: s3://immich-db-backups-139686886510/
+    s3Credentials:
+      accessKeyId:
+        name: immich-db-backup-s3
+        key: ACCESS_KEY_ID
+      secretAccessKey:
+        name: immich-db-backup-s3
+        key: ACCESS_SECRET_KEY
+      region:
+        name: immich-db-backup-s3
+        key: REGION
+    wal:
+      compression: gzip
+    data:
+      compression: gzip
+---
+apiVersion: postgresql.cnpg.io/v1
+kind: ScheduledBackup
+metadata:
+  name: immich-database-daily
+  namespace: immich
+spec:
+  # 10:00 UTC = 03:00 Pacific (PDT)
+  schedule: "0 0 10 * * *"
+  backupOwnerReference: self
+  cluster:
+    name: immich-database
+  method: plugin
+  pluginConfiguration:
+    name: barman-cloud.cloudnative-pg.io

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: immich
+  annotations:
+    # Never let Flux delete the namespace (and the data in it) if this file is removed
+    kustomize.toolkit.fluxcd.io/prune: disabled
