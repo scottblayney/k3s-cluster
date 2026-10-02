@@ -21,7 +21,6 @@ spec:
               command: ["/bin/sh", "-ec"]
               args:
                 - |
-                  restic cat config >/dev/null 2>&1 || restic init
                   restic unlock
                   restic backup /data --host immich --tag library \
                     --exclude /data/thumbs --exclude /data/encoded-video
