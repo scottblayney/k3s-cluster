@@ -8,6 +8,7 @@ metadata:
     kustomize.toolkit.fluxcd.io/prune: disabled
 spec:
   instances: 1
+  enablePDB: false
   storage:
     size: 10Gi
     storageClass: local-path
