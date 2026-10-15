@@ -12,6 +12,8 @@ spec:
     image: rancher/k3s-upgrade
     args: ["prepare", "k3s-server"]
   serviceAccountName: system-upgrade
+  tolerations:
+    - {key: nvidia.com/gpu, operator: Exists, effect: NoSchedule}
   drain:
     force: true
     skipWaitForDeleteTimeout: 60
