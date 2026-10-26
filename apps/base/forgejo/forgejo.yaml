@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forgejo
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate # SQLite: only one writer at a time
+  selector:
+    matchLabels:
+      app: forgejo
+  template:
+    metadata:
+      labels:
+        app: forgejo
+    spec:
+      securityContext:
+        fsGroup: 1000
+      containers:
+        - name: forgejo
+          image: codeberg.org/forgejo/forgejo:17.0.1-rootless
+          ports:
+            - name: http
+              containerPort: 3000
+            - name: ssh
+              containerPort: 2222
+          env:
+            - name: FORGEJO__database__DB_TYPE
+              value: sqlite3
+            - name: FORGEJO__server__DOMAIN
+              value: git.blayney.org
+            - name: FORGEJO__server__ROOT_URL
+              value: http://git.blayney.org/
+            - name: FORGEJO__server__SSH_DOMAIN
+              value: git.blayney.org
+            - name: FORGEJO__server__SSH_PORT
+              value: "2222"
+            - name: FORGEJO__server__SSH_LISTEN_PORT
+              value: "2222"
+            - name: FORGEJO__service__DISABLE_REGISTRATION
+              value: "true"
+          readinessProbe:
+            httpGet:
+              path: /api/healthz
+              port: http
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/gitea
+              subPath: data
+            - name: data
+              mountPath: /etc/gitea # app.ini holds generated secrets, must persist
+              subPath: config
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: forgejo-data
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: forgejo-http
+spec:
+  selector:
+    app: forgejo
+  ports:
+    - name: http
+      port: 3000
+---
+# k3s servicelb binds this port on every node, so it can't be 22 (host sshd).
+apiVersion: v1
+kind: Service
+metadata:
+  name: forgejo-ssh
+spec:
+  type: LoadBalancer
+  selector:
+    app: forgejo
+  ports:
+    - name: ssh
+      port: 2222
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: forgejo
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: git.blayney.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: forgejo-http
+                port:
+                  name: http
