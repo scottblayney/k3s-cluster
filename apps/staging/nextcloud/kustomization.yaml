@@ -4,3 +4,5 @@ namespace: nextcloud
 resources:
   - cloudflare.yaml
   - cloudflare-secret.yaml
+  - release.yaml
+  - values-secret.yaml
