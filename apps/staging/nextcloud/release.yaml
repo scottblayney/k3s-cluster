@@ -13,9 +13,6 @@ metadata:
   name: nextcloud-aio
   namespace: nextcloud
 spec:
-  # Adopts the release originally installed with `helm install`. Unsuspend to
-  # let Flux take over.
-  suspend: true
   interval: 30m
   releaseName: nextcloud-aio
   chart:
