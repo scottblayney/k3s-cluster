@@ -9,6 +9,25 @@ metadata:
 spec:
   instances: 1
   enablePDB: false
+  # Ubuntu 26.04 stacks AppArmor profiles for containers, and the default
+  # containerd profile then denies SIGURG between processes of the same
+  # container. Postgres uses SIGURG for latch wakeups, so crash recovery and
+  # new logins can hang forever (the same failure as nextcloud-aio-database).
+  # Setting securityContext replaces the operator's default container
+  # securityContext, so those defaults are restated here; only appArmorProfile
+  # is new.
+  securityContext:
+    allowPrivilegeEscalation: false
+    privileged: false
+    readOnlyRootFilesystem: true
+    runAsNonRoot: true
+    capabilities:
+      drop:
+        - ALL
+    seccompProfile:
+      type: RuntimeDefault
+    appArmorProfile:
+      type: Unconfined
   storage:
     size: 10Gi
     storageClass: local-path
